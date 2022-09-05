@@ -2,6 +2,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+import django_on_heroku
+
 load_dotenv()
 
 
@@ -142,3 +144,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY')
+
+django_on_heroku.settings(locals())
